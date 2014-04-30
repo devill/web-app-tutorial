@@ -1,7 +1,9 @@
 require 'sinatra'
 
+require_relative 'hello_view'
+
 get '/' do
-  'Hello world'
+  HelloView.new.render
 end
 
 get '/goodbye' do

@@ -6,10 +6,6 @@ get '/' do
   HelloView.new.render
 end
 
-get '/goodbye' do
-  'Good bye'
-end
-
 get '/hello/:name' do
-  "Hello #{params[:name]}!"
+  HelloView.new(params[:name]).render
 end

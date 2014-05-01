@@ -1,7 +1,7 @@
 require 'sinatra'
 
-require_relative 'hello_view'
-require_relative 'fizz_buzz_view'
+require_relative 'views/hello_view'
+require_relative 'views/fizz_buzz_view'
 
 get '/' do
   HelloView.new.render

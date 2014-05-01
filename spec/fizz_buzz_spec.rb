@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/fizzbuzz'
+require_relative '../lib/fizz_buzz'
 
 describe FizzBuzz do
   [

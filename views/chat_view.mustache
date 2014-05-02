@@ -4,6 +4,9 @@
         <title>Chat</title>
     </head>
     <body>
+        {{#messages}}
+            <p><b>{{{name}}}</b>: {{{message}}}</p>
+        {{/messages}}
         <form method="post">
             <input name="name" type="text" placeholder="Your name"/><input type="submit"/><br/>
             <textarea name="message" placeholder="Your message"></textarea>

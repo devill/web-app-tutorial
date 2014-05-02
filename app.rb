@@ -3,6 +3,7 @@ require 'sinatra'
 require_relative 'views/chat_view'
 require_relative 'views/fizz_buzz_view'
 require_relative 'views/hello_view'
+require_relative 'lib/chat_message_store.rb'
 
 get '/' do
   HelloView.new.render
@@ -21,5 +22,6 @@ get '/chat' do
 end
 
 post '/chat' do
-  "#{params[:name]} - #{params[:message]}"
+  ChatMessageStore.instance.add_message params[:name], params[:message]
+  ChatView.new.render
 end

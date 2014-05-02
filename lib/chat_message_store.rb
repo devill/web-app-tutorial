@@ -1,13 +1,16 @@
+require_relative '../document_store'
 
 class ChatMessageStore
-  attr_reader :messages
-
   def initialize
-    @messages = []
+    @collection = DocumentStore.instance['chat_messages']
+  end
+
+  def messages
+    @collection.find.sort(:_id).to_a
   end
 
   def add_message(name, message)
-    @messages << { name: name, message: message }
+    @collection.insert({'name' => name, 'message' => message})
   end
 
   def self.instance

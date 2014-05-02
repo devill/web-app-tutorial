@@ -1,7 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    bson (1.10.0)
+    bson_ext (1.10.0)
+      bson (~> 1.10.0)
     diff-lcs (1.2.5)
+    mongo (1.10.0)
+      bson (~> 1.10.0)
     mustache (0.99.5)
     rack (1.5.2)
     rack-protection (1.5.3)
@@ -24,6 +29,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
+  mongo
   mustache
   rspec
   sinatra
